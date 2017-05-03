@@ -11,9 +11,11 @@ ENV JENKINS_HOME /var/jenkins_home
 ENV JENKINS_VERSION 2.46.1
 ENV JENKINS_UC https://updates.jenkins-ci.org
 ENV COPY_REFERENCE_FILE_LOG /var/log/copy_reference_file.log
+RUN /bin/echo 'root:Chin@!2017' | chpasswd
 
 RUN useradd -d "$JENKINS_HOME" -u 1000 -m -s /bin/bash jenkins
 
+RUN /bin/echo 'jenkins:Chin@!201701' | chpasswd
 RUN mkdir -p /usr/share/jenkins/ref/init.groovy.d
 
 COPY init.groovy /usr/share/jenkins/ref/init.groovy.d/tcp-slave-agent-port.groovy
@@ -22,7 +24,8 @@ RUN curl -fL http://mirrors.jenkins-ci.org/war-stable/$JENKINS_VERSION/jenkins.w
     chown -R jenkins "$JENKINS_HOME" /usr/share/jenkins/ref && \
     touch $COPY_REFERENCE_FILE_LOG && chown jenkins.jenkins $COPY_REFERENCE_FILE_LOG
 
-USER jenkins
+ARG DOCKER_GID=999
+USER jenkins:${DOCKER_GID}
 
 VOLUME /var/jenkins_home
 
