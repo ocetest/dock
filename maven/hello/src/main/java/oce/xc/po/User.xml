@@ -6,7 +6,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 <mapper namespace="csphere.xc">
 
 	<select id="findUserById" parameterType="java.lang.Integer" resultType="csphere.xc.po.User">
-	   SELECT * FROM user WHERE id=#{value}
+	   SELECT * FROM user1 WHERE id=#{value}
 	</select>
 
 </mapper>
