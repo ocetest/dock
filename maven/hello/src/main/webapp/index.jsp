@@ -8,6 +8,6 @@ request.setAttribute("name", name1);
 %>
 <html>
 <body>
-<h2>Hello Baby! You are  <%=name1 %> !</h2>
+<h2>Successful! You are  <%=name1 %> !</h2>
 </body>
 </html>
