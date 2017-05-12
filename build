@@ -4,7 +4,7 @@ set -e
 
 WORKSPACE=/var/lib/go-agent/pipelines/mydockerjava
 REGISTRY_URL=10.112.4.102:5000
-cp /root/apache-maven-3.5.0-bin.tar.gz $WORKSPACE/maven
+cp /opt/apache-maven-3.5.0-bin.tar.gz $WORKSPACE/maven
 #docker images | grep none | awk '{print $3}'| xargs docker rmi -f
 docker build -t oce/maven:3.5.0 $WORKSPACE/maven
 if docker ps -a | grep -i maven; then
