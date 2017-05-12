@@ -18,3 +18,4 @@ if docker ps -a | grep -i newhello;then
    docker rm -f newhello
 fi
 docker run -d -p 80:8080 --name newhello --link oceoracle:linksql $REGISTRY_URL/oce/hello:1.0
+exec "$@"
