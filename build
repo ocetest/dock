@@ -18,4 +18,14 @@ if sudo docker ps -a | grep -i newhello;then
    sudo docker rm -f newhello
 fi
 sudo docker run -d -p 80:8080 --name newhello --link oceoracle:linksql $REGISTRY_URL/oce/hello:1.0
+
+
+if sudo docker images |grep none ; then
+   sudo docker images |grep none |awk '{print $3}' | sudo xargs docker rmi -f
+fi
+
+
+
+
+
 exec "$@"
