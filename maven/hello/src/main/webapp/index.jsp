@@ -7,6 +7,10 @@ String name1 = select.select();
 request.setAttribute("name", name1);
 %>
 <html>
+<head>
+<title> Jerry </title>
+</head>
+
 <body>
 <h1>Improve some function</h1>
 
