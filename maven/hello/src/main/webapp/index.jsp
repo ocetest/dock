@@ -8,7 +8,8 @@ request.setAttribute("name", name1);
 %>
 <html>
 <body>
-<h1>Ju ran cheng gong le</h1>
-<h2>20170509! You are  <%=name1 %> !</h2>
+<h1>Improve some function</h1>
+
+<h2>20170513! You are  <%=name1 %> !</h2>
 </body>
 </html>
